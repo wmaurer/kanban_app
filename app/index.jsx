@@ -1,3 +1,5 @@
+import "array.prototype.findindex";
+
 import "./main.css";
 
 import React from "react";
@@ -9,8 +11,8 @@ main();
 
 function main() {
 	const app = document.createElement("div");
-	
+
 	document.body.appendChild(app);
-	
+
 	ReactDOM.render(<App />, app);
 }
