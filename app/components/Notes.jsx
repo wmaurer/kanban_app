@@ -8,14 +8,15 @@ export default class Notes extends Component {
     }
     render() {
         const notes = this.props.items;
-        return <ul>{notes.map(this.renderNote)}</ul>;
+        return <ul className="notes">{notes.map(this.renderNote)}</ul>;
     }
     renderNote(note) {
         return (
-            <li key={`note${note.id}`}>
+            <li className="note" key={`note${note.id}`}>
                 <Note
                     task={note.task}
-                    onEdit={this.props.onEdit.bind(null, note.id)} />
+                    onEdit={this.props.onEdit.bind(null, note.id)}
+                    onDelete={this.props.onDelete.bind(null, note.id)} />
             </li>
         );
     }
