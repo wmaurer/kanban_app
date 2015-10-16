@@ -33,6 +33,9 @@
     "alt": "^0.17.4",
     "array.prototype.findindex": "^1.0.0",
     "node-uuid": "^1.4.3",
-    "react": "^0.14.0"
+    "react": "^0.14.0",
+    "react-dnd": "^2.0.0",
+    "react-dnd-html5-backend": "^2.0.0",
+    "react-dnd-test-backend": "^1.0.0"
   }
 }
