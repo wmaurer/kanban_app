@@ -6,6 +6,11 @@ class NoteStore {
     constructor() {
         this.bindActions(NoteActions);
         this.notes = [];
+
+        this.exportPublicMethods({
+            get: this.get.bind(this)
+        });
+        // this.dispatcher.register(console.log.bind(console));
     }
     create(note) {
         const notes = this.notes;
@@ -40,12 +45,15 @@ class NoteStore {
             notes: notes.filter(n => n.id !== id)
         });
     }
+    get(ids) {
+        return (ids || []).map(id => this.notes[this.findNote(id)]).filter(a => a);
+    }
     findNote(id) {
         const notes = this.notes;
         const noteIndex = notes.findIndex(note => note.id === id);
 
         if (noteIndex < 0) {
-            console.warn('Failed to find note', notes, id);
+            console.warn("Failed to find note", notes, id);
         }
 
         return noteIndex;
