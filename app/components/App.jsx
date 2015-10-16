@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import Notes from "./Notes.jsx";
 import NoteActions from "../actions/NoteActions";
 import NoteStore from "../stores/NoteStore";
-import connect from "../decorators/connect";
+import connectToStores from "alt/utils/connectToStores";
 
-@connect(NoteStore)
+@connectToStores
 export default class App extends Component {
+    static getStores() {
+        return [NoteStore];
+    }
+    static getPropsFromStores(props) {
+        return NoteStore.getState();
+    }
     render() {
         const notes = this.props.notes;
 
