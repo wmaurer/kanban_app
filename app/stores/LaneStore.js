@@ -62,6 +62,8 @@ class LaneStore {
             return;
         }
 
+        this.removeNote(noteId);
+
         const lane = lanes[targetId];
 
         if (lane.notes.indexOf(noteId) === -1) {
@@ -72,6 +74,19 @@ class LaneStore {
         else {
             console.warn("Already attached note to lane", lanes);
         }
+    }
+
+    removeNote(noteId) {
+        const lanes = this.lanes;
+        const removeLane = lanes.filter(lane => lane.notes.indexOf(noteId) >= 0)[0];
+
+        if (!removeLane) {
+            return;
+        }
+
+        const removeNoteIndex = removeLane.notes.indexOf(noteId);
+
+        removeLane.notes = removeLane.notes.slice(0, removeNoteIndex).concat(removeLane.notes.slice(removeNoteIndex + 1));
     }
 
     detachFromLane({ laneId, noteId }) {
