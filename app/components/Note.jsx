@@ -32,7 +32,7 @@ const noteTarget = {
 @DropTarget(ItemTypes.NOTE, noteTarget, connect => ({
     connectDropTarget: connect.dropTarget()
 }))
-export default class Note extends Component {
+class Note extends Component {
     render() {
         const { connectDragSource, connectDropTarget, isDragging,
             id, onMove, ...props } = this.props;
@@ -44,3 +44,16 @@ export default class Note extends Component {
         ));
     }
 }
+
+Note.propTypes = {
+    id: React.PropTypes.string.isRequired,
+    connectDragSource: React.PropTypes.func,
+    connectDropTarget: React.PropTypes.func,
+    onMove: React.PropTypes.func
+};
+
+Note.defaultProps = {
+    onMove: () => {}
+};
+
+export default Note;

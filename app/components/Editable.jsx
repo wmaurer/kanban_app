@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Editable extends Component {
+class Editable extends Component {
 	constructor(props) {
 		super(props);
 
@@ -60,3 +60,16 @@ export default class Editable extends Component {
 		});
 	}
 }
+
+Editable.propTypes = {
+	value: React.PropTypes.string,
+	onEdit: React.PropTypes.func.isRequired,
+	onDelete: React.PropTypes.func
+};
+
+Editable.defaultProps = {
+	value: "",
+	onEdit: () => {}
+};
+
+export default Editable;

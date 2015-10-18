@@ -16,7 +16,7 @@ export default class App extends Component {
                 <AltContainer
                     stores={[LaneStore]}
                     inject={ {
-                        items: () => LaneStore.getState().lanes || []
+                        items: () => LaneStore.getState().lanes
                     } }
                 >
                     <Lanes />
