@@ -48,7 +48,7 @@ export default class Editable extends Component {
 		});
 	}
 	checkEnter(e) {
-		if(e.key === 'Enter') {
+		if (e.key === "Enter") {
 			this.finishEdit(e);
 		}
 	}
