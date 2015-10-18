@@ -9,7 +9,6 @@ const {
     Simulate
 } = React.addons.TestUtils;
 
-
 describe("Editable", () => {
     it("renders value", () => {
         const value = "value";
