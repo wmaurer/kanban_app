@@ -1,11 +1,11 @@
-import AltContainer from 'alt/AltContainer';
-import React, { Component } from 'react';
+import AltContainer from "alt/AltContainer";
+import React, { Component } from "react";
 import { DropTarget } from "react-dnd";
 import ItemTypes from "../constants/ItemTypes"
-import Notes from './Notes.jsx';
-import NoteActions from '../actions/NoteActions';
-import NoteStore from '../stores/NoteStore';
-import LaneActions from '../actions/LaneActions';
+import Notes from "./Notes.jsx";
+import NoteActions from "../actions/NoteActions";
+import NoteStore from "../stores/NoteStore";
+import LaneActions from "../actions/LaneActions";
 import Editable from "./Editable.jsx";
 
 const noteTarget = {
@@ -59,21 +59,21 @@ class Lane extends Component {
     }
     editName(id, name) {
         if(name) {
-            LaneActions.update({id, name});
+            LaneActions.update({ id, name });
         }
         else {
             LaneActions.delete(id);
         }
     }
     addNote(laneId) {
-        NoteActions.create({task: 'New task'});
-        LaneActions.attachToLane({laneId});
+        NoteActions.create({ task: "New task" });
+        LaneActions.attachToLane({ laneId });
     }
     editNote(id, task) {
-        NoteActions.update({id, task});
+        NoteActions.update({ id, task });
     }
     deleteNote(laneId, noteId) {
-        LaneActions.detachFromLane({laneId, noteId});
+        LaneActions.detachFromLane({ laneId, noteId });
         NoteActions.delete(noteId);
     }
 }

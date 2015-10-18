@@ -25,6 +25,13 @@ var common = {
         filename: "bundle.js"
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.jsx?$/,
+                loaders: ["eshint"],
+                include: APP_PATH
+            }
+        ],
         loaders: [{
             test: /\.jsx?$/,
             loaders: ["babel"],

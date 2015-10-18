@@ -10,7 +10,6 @@ class NoteStore {
         this.exportPublicMethods({
             get: this.get.bind(this)
         });
-        // this.dispatcher.register(console.log.bind(console));
     }
     create(note) {
         const notes = this.notes;
@@ -21,7 +20,7 @@ class NoteStore {
           notes: notes.concat(note)
         });
     }
-    update({id, task}) {
+    update({ id, task }) {
         const notes = this.notes;
         const noteIndex = this.findNote(id);
 
@@ -31,7 +30,7 @@ class NoteStore {
 
         notes[noteIndex].task = task;
 
-        this.setState({notes});
+        this.setState({ notes });
     }
     delete(id) {
         const notes = this.notes;

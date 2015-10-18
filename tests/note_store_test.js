@@ -28,7 +28,7 @@ describe("NoteStore", () => {
 
         const note = NoteStore.getState().notes[0];
 
-        NoteActions.update({...note, task: updatedTask });
+        NoteActions.update({ ...note, task: updatedTask });
 
         const state = NoteStore.getState();
 
@@ -56,6 +56,6 @@ describe("NoteStore", () => {
         const notes = NoteStore.get([note.id]);
 
         assert.equal(notes.length, 1);
-        assert.equal(notes[0].task, task);        
+        assert.equal(notes[0].task, task);
     });
 });

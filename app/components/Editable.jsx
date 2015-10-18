@@ -15,12 +15,12 @@ class Editable extends Component {
 		};
 	}
 	render() {
-		const {value, onEdit, ...props} = this.props;
+		const { value, onEdit, ...props } = this.props;
 		const editing = this.state.editing;
 
 		return (
 			<div {...props}>
-				{editing ? this.renderEdit() : this.renderValue()}
+				{ editing ? this.renderEdit() : this.renderValue() }
 			</div>
 		);
 	}

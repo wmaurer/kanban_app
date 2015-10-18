@@ -32,7 +32,7 @@ class LaneStore {
 
         lanes[targetId].name = name;
 
-        this.setState({lanes});
+        this.setState({ lanes });
     }
 
     delete(id) {
@@ -40,7 +40,7 @@ class LaneStore {
         const targetId = this.findLane(id);
 
         if (targetId < 0) {
-        return;
+            return;
         }
 
         this.setState({
@@ -69,7 +69,7 @@ class LaneStore {
         if (lane.notes.indexOf(noteId) === -1) {
             lane.notes.push(noteId);
 
-            this.setState({lanes});
+            this.setState({ lanes });
         }
         else {
             console.warn("Already attached note to lane", lanes);
@@ -105,7 +105,7 @@ class LaneStore {
             lane.notes = notes.slice(0, removeIndex).
             concat(notes.slice(removeIndex + 1));
 
-            this.setState({lanes});
+            this.setState({ lanes });
         }
         else {
             console.warn("Failed to remove note from a lane as it didn't exist", lanes);
